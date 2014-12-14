@@ -29,11 +29,21 @@
     </head>
     <body>
         <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+            <h1>Device properties 2</h1>
+            <h2 id="myOutput"></h2>
+            <script type="text/javascript">
+            document.getElementById("myOutput").innerHTML = "hola";
+            document.addEventListener("deviceready", onDeviceReady, false);
+            function onDeviceReady() {
+                var device = window.device;
+                var myText = device.model + ' - ' 
+                 + device.cordova + ' - ' 
+                 + device.platform+ ' - ' 
+                 + device.uuid+ ' - ' 
+                 + device.version
+                document.getElementById("myOutput").innerHTML = myText;
+            }
+            </script>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
