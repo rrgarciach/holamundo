@@ -28,12 +28,27 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+        <div id="screen1" class="page center">
+            <h1>Screen 1</h1>
+                <button id="buttonMenu">Menu</button>
+                <button id="buttonScreen2">Screen 2</button>
+        </div>
+
+        <div id="screen2" class="page rightTotal">
+            <h1>Screen 2</h1>
+        </div>
+
+        <div id="menu" class="page leftTotal">
+            <h1>Screen Menu2</h1>
+            <nav>
+                <ul>
+                    <li><h4>OPTION A</h4></li>
+                    <li><h4>OPTION B</h4></li>
+                    <li><h4>OPTION C</h4></li>
+                    <li><h4>OPTION D</h4></li>
+                </ul>
+            </nav>
+            <p>MENU</p>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
