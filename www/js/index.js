@@ -33,6 +33,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        app.setupParallax();
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
@@ -45,6 +46,19 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    setupParallax: function() {
+        $('section[data-type="parallax_section"]').each(function() {
+            var oBackgr = $(this);
+            $(window).scroll(function() {
+                var myWindow = $(window);
+                var yPos = -(myOWindow.scrollTop() / oBackgr.data('speed'));
+                // background coordenades:
+                var coords = '50% ' + yPos + 'px';
+                // moving the background:
+                oBackgr.css({ backgroundPosition: coords }) ;
+            });
+        });
     }
 };
 
